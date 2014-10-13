@@ -33,8 +33,9 @@ public class BlogPostParser {
 
         try {
             while ((line = reader.readLine()) != null) {
-
+                builder.append(line);
             }
+            Log.i("BlogPostParser", "Input Stream String: " + builder.toString());
         }
         catch (IOException error) {
             Log.e("BlogPostParser", "IOException: " + error);
