@@ -18,7 +18,7 @@ public class BlogActivity extends Activity {
         setContentView(R.layout.activity_blog);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
-        listView = (ListView)findViewById(R.id.ListView);
+        listView = (ListView)findViewById(R.id.listView);
 
         listView.setEmptyView(progressBar);
 
