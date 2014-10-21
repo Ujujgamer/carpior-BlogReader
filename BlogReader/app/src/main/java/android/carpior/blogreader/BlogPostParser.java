@@ -1,6 +1,7 @@
 package android.carpior.blogreader;
 
 
+import android.text.Html;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -60,7 +61,7 @@ public class BlogPostParser {
             for(int index = 0; index < jsonPosts.length(); index ++) {
                 JSONObject post = jsonPosts.getJSONObject(index);
 
-                String title = post.getString("title");
+                String title = Html.fromHtml(post.getString("title")).toString();
                 String url = post.getString("url");
 
                 BlogPost blogPost = new BlogPost(title, url);
