@@ -47,7 +47,7 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject> {
         BlogPostParser.get().readFeed(jsonObject);
         ListView listView = (ListView)activity.findViewById(R.id.listView);
 
-        BlogPostAdapter adapter = new BlogPostAdapter(this, BlogPostParser.get().posts);
+        BlogPostAdapter adapter = new BlogPostAdapter(activity, BlogPostParser.get().posts);
         listView.setAdapter(adapter);
     }
 }
