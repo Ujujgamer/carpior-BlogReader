@@ -1,6 +1,8 @@
 package android.carpior.blogreader;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +31,12 @@ public class BlogActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("BlogActivity", "Title: " + BlogPostParser.get().posts.get(position).title);
+
+                Intent intent = new Intent(getApplication(), BlogWebActivity.class);
+                Uri blogUri = Uri.parse(BlogPostParser.get().posts.get(position).url);
+                intent.setData(blogUri);
+
+                startActivity(intent);
             }
         });
 
